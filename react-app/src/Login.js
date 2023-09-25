@@ -1,29 +1,60 @@
-import './Login.css';
-import InputBox  from './Conponents/InputBox';
-import ButtonBox from './Conponents/buttonBox';
-import CheckBox from './Conponents/checkBox';
+import "./Login.css";
+import InputBox from "./Conponents/InputBox";
+import ButtonBox from "./Conponents/buttonBox";
+import CheckBox from "./Conponents/checkBox";
+import imageFile from "./Assests/Images/office.jpeg";
 function App() {
-  const input =[
+  const inputs = [
     {
-      id:1,
-      title:"Email",
-      type:"email",
-
-    }
-  ]
+      id: 1,
+      title: "Email",
+      placeholder: "Enter a Email",
+      type: "email",
+      name: "email",
+    },
+    {
+      id: 2,
+      title: "Password",
+      placeholder: "Enter a Password",
+      type: "password",
+      name: "password",
+    },
+  ];
   return (
     <div className="bg-gray-300 h-[100vh] font-thin flex justify-center items-center select-none">
-      <form action="" className="grid bg-white grid-cols-1 rounded-3xl h-max p-4 m-2">
-        <h1 className="text-7xl text-center my-5">Login</h1>
-        <InputBox title="Email" type="email" name="email"></InputBox>
-        <InputBox title="Password" type="password" name="password"></InputBox>
-        <div className="grid grid-cols-[60%_40%]">
+      <form
+        action=""
+        className="grid bg-white grid-cols-1 rounded-3xl h-max pb-4 m-2"
+      >
+        <img
+          src={imageFile}
+          alt="Image not found"
+          className="block h-52 w-full max-sm:hidden rounded-t-[1.2rem]"
+        />
+        <span class="hidden before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-400 translate-y- relative max-sm:inline-block -translate-y-3">
+          <div className="text-7xl hidden text-center my-5 max-sm:block">
+            <span class="relative text-white text-8xl">L</span>
+            <span class="relative text-white">ogin</span>
+          </div>
+        </span>
+        {inputs.map((input) => (
+          <InputBox
+            title={input.title}
+            type={input.type}
+            name={input.name}
+            className={input.className}
+          ></InputBox>
+        ))}
+        <div className="grid grid-cols-[60%_40%] mx-3">
           <CheckBox name="checkbox" title="Remember me"></CheckBox>
-          <a href="" className="text-right px-4">Forget Password</a>
+          <a href="localhost:3000" className="text-right px-4">
+            Forget Password
+          </a>
         </div>
         <ButtonBox type="submit" name="submit" title="Login"></ButtonBox>
-        <a href="" className="text-center ">Tems & condintion</a>
-
+        <a href="localhost:3000" className="text-center ">
+          Tems & condintion
+        </a>
       </form>
     </div>
   );
