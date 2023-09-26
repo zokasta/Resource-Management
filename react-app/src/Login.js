@@ -9,7 +9,7 @@ function App() {
       id: 1,
       title: "Email",
       placeholder: "Enter a Email",
-      type: "email",
+      type: "text",
       name: "email",
     },
     {
@@ -25,16 +25,17 @@ function App() {
       <form
         action=""
         className="grid bg-white grid-cols-1 rounded-3xl h-max pb-4 m-2"
+        // method="post"
       >
         <img
           src={imageFile}
-          alt="Image not found"
+          alt="Images not found"
           className="block h-52 w-full max-sm:hidden rounded-t-[1.2rem]"
         />
-        <span class="hidden before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-400 translate-y- relative max-sm:inline-block -translate-y-3">
+        <span className="hidden before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-green-500 translate-y- relative max-sm:inline-block -translate-y-3">
           <div className="text-7xl hidden text-center my-5 max-sm:block">
-            <span class="relative text-white text-8xl">L</span>
-            <span class="relative text-white">ogin</span>
+            <span className="relative text-white text-8xl">S</span>
+            <span className="relative text-white">ign in</span>
           </div>
         </span>
         {inputs.map((input) => (

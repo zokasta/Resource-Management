@@ -8,7 +8,7 @@ function inputBox(props)
                 name={props.name}
                 className="w-full px-3 py-2 rounded-lg border border-blue-400  focus:outline-none   focus:border-blue-60000"
             />
-            <p></p>
+            <p className={`text-red-600 ${props.name}`}></p>
         </div>
     );
 }
