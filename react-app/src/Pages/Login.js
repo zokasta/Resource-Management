@@ -1,11 +1,10 @@
-import "./Login.css";
 import InputBox from "../Conponents/InputBox";
 import ButtonBox from "../Conponents/buttonBox";
 import CheckBox from "../Conponents/checkBox";
-import imageFile from "./Assests/Images/office.jpeg";
+import imageFile from "../Assests/Images/office.jpeg";
 import React, { useState } from "react"; // Import React and useState
 
-function App() {
+function Login() {
   const inputs = [
     {
       id: 1,
@@ -82,4 +81,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
