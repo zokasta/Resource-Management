@@ -3,13 +3,15 @@ import InputBox from "./Conponents/InputBox";
 import ButtonBox from "./Conponents/buttonBox";
 import CheckBox from "./Conponents/checkBox";
 import imageFile from "./Assests/Images/office.jpeg";
+import React, { useState } from "react"; // Import React and useState
+
 function App() {
   const inputs = [
     {
       id: 1,
       title: "Email",
       placeholder: "Enter a Email",
-      type: "email",
+      type: "text",
       name: "email",
     },
     {
@@ -20,11 +22,28 @@ function App() {
       name: "password",
     },
   ];
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const emailvalidate = () => {
+        const regex = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(?:\.[a-z]{2,8})?/g;
+        if (regex.test(email)) {
+            setMessage("Email is valid");
+        }
+        else {
+            setMessage("Email is not valid");
+        }
+    }
+
+    const handleOnChange = (e) => {
+        setEmail(e.target.value);
+    }
   return (
     <div className="bg-gray-300 h-[100vh] font-thin flex justify-center items-center select-none">
       <form
         action=""
         className="grid bg-white grid-cols-1 rounded-3xl h-max pb-4 m-2"
+        onSubmit={email}
       >
         <img
           src={imageFile}
@@ -43,6 +62,9 @@ function App() {
             type={input.type}
             name={input.name}
             className={input.className}
+            placeholder={input.placeholder}
+            onChange={handleOnChange}
+            value={email}
           ></InputBox>
         ))}
         <div className="grid grid-cols-[60%_40%] mx-3">
