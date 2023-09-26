@@ -1,7 +1,7 @@
 import "./Login.css";
-import InputBox from "./Conponents/InputBox";
-import ButtonBox from "./Conponents/buttonBox";
-import CheckBox from "./Conponents/checkBox";
+import InputBox from "../Conponents/InputBox";
+import ButtonBox from "../Conponents/buttonBox";
+import CheckBox from "../Conponents/checkBox";
 import imageFile from "./Assests/Images/office.jpeg";
 import React, { useState } from "react"; // Import React and useState
 
